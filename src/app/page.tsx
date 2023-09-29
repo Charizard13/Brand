@@ -34,10 +34,6 @@ export default function Home() {
         }}
         variant="outlined"
       >
-        <IconButton sx={{ alignSelf: "flex-end" }} aria-label="close">
-          <span className="material-symbols-rounded">close</span>
-        </IconButton>
-        <Button endDecorator={<span className="material-symbols-rounded">arrow_forward_ios</span>}>Go to the next page</Button>
         <div>
           <Typography level="h4" component="h1">
             <strong>Welcome back 👋</strong>
@@ -52,7 +48,9 @@ export default function Home() {
           <FormLabel>Password</FormLabel>
           <Input name="password" type="password" placeholder="password" />
         </FormControl>
-        <Button sx={{ mt: 1 }}>Log in</Button>
+        <Button sx={{ mt: 1 }} endDecorator={<span className="material-symbols-rounded">arrow_forward_ios</span>}>
+          Log in
+        </Button>
         <Typography endDecorator={<Link href="/sign-up">Sign up</Link>} fontSize="sm" sx={{ alignSelf: "center" }}>
           Don&apos;t have an account?
         </Typography>
