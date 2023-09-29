@@ -31,6 +31,7 @@ const theme = extendTheme({
     display: inter.style.fontFamily,
     code: sourceCodePro.style.fontFamily,
   },
+
   // components: {
   //   JoyButton: {
   //     styleOverrides: {
