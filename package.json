@@ -1,6 +1,6 @@
 {
-  "name": "joy-ui-nextjs-ts",
-  "version": "5.0.0",
+  "name": "piven",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -1,38 +1,43 @@
-import * as React from 'react';
-import Sheet from '@mui/joy/Sheet';
-import Typography from '@mui/joy/Typography';
-import FormControl from '@mui/joy/FormControl';
-import FormLabel from '@mui/joy/FormLabel';
-import Input from '@mui/joy/Input';
-import Button from '@mui/joy/Button';
-import Link from '@mui/joy/Link';
+import * as React from "react";
+import Sheet from "@mui/joy/Sheet";
+import Typography from "@mui/joy/Typography";
+import FormControl from "@mui/joy/FormControl";
+import FormLabel from "@mui/joy/FormLabel";
+import Input from "@mui/joy/Input";
+import Button from "@mui/joy/Button";
+import Link from "@mui/joy/Link";
+import IconButton from "@mui/joy/IconButton";
 
 export default function Home() {
   return (
     <Sheet
       sx={{
-        display: 'flex',
-        flexFlow: 'row nowrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh',
+        display: "flex",
+        flexFlow: "row nowrap",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
       }}
     >
       <Sheet
         sx={{
           width: 300,
-          mx: 'auto',
+          mx: "auto",
           my: 4,
           py: 3,
           px: 2,
-          display: 'flex',
-          flexDirection: 'column',
+          display: "flex",
+          flexDirection: "column",
           gap: 2,
-          borderRadius: 'sm',
-          boxShadow: 'md',
+          borderRadius: "sm",
+          boxShadow: "md",
         }}
         variant="outlined"
       >
+        <IconButton sx={{ alignSelf: "flex-end" }} aria-label="close">
+          <span className="material-symbols-rounded">close</span>
+        </IconButton>
+        <Button endDecorator={<span className="material-symbols-rounded">arrow_forward_ios</span>}>Go to the next page</Button>
         <div>
           <Typography level="h4" component="h1">
             <strong>Welcome back 👋</strong>
@@ -48,11 +53,7 @@ export default function Home() {
           <Input name="password" type="password" placeholder="password" />
         </FormControl>
         <Button sx={{ mt: 1 }}>Log in</Button>
-        <Typography
-          endDecorator={<Link href="/sign-up">Sign up</Link>}
-          fontSize="sm"
-          sx={{ alignSelf: 'center' }}
-        >
+        <Typography endDecorator={<Link href="/sign-up">Sign up</Link>} fontSize="sm" sx={{ alignSelf: "center" }}>
           Don&apos;t have an account?
         </Typography>
       </Sheet>
