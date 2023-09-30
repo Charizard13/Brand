@@ -24,13 +24,7 @@ export default function Home() {
         }}
       >
         <Logo size={140} />
-        <Typography
-          level="h1"
-          fontSize={"1.75rem"}
-          sx={{
-            mt: 3,
-          }}
-        >
+        <Typography level="h1" fontSize={"1.75rem"} whiteSpace={"nowrap"}>
           Gandalf House
         </Typography>
       </Stack>
@@ -41,6 +35,7 @@ export default function Home() {
           left: "50%",
           transform: "translate(-50%, -50%)",
         }}
+        textAlign={"center"}
         level="body-sm"
       >
         Click on the hat if you want to take your vision on a magical journey..

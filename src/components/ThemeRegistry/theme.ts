@@ -31,7 +31,13 @@ const theme = extendTheme({
     display: inter.style.fontFamily,
     code: sourceCodePro.style.fontFamily,
   },
-
+  colorSchemes: {
+    dark: {
+      palette: {
+        primary: { 400: "#3ce06d" },
+      },
+    },
+  },
   // components: {
   //   JoyButton: {
   //     styleOverrides: {

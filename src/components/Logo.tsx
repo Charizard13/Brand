@@ -1,26 +1,28 @@
-"use client";
-import Image from "next/image";
-
-import { useRouter } from "next/navigation";
+import LogoSvg from "@/assets/logo.svg";
+import Sheet from "@mui/joy/Sheet";
 
 type Props = {
   size: number;
 };
 
 export default function Logo({ size }: Props) {
-  const router = useRouter();
-
   return (
-    <Image
-      src="/Logo.png"
-      alt="Logo"
-      width={size}
-      height={size}
-      sizes="(max-width: 768px) 100vw"
-      onClick={() => router.push("/home")}
-      style={{
+    <Sheet
+      href="/hello"
+      sx={{
         cursor: "pointer",
+        backgroundColor: "transparent",
+        width: size,
+        height: size,
+        "svg path": {
+          ":hover": {
+            color: "success.400",
+            transition: "all 0.5s ease-in-out",
+          },
+        },
       }}
+      component="a"
+      children={<LogoSvg />}
     />
   );
 }

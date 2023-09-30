@@ -14,11 +14,16 @@
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@mui/joy": "latest",
+    "framer-motion": "^10.16.4",
+    "i": "^0.3.7",
     "next": "latest",
+    "npm": "^10.1.0",
     "react": "latest",
+    "react-calendly": "^4.1.1",
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
