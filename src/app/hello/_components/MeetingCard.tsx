@@ -19,7 +19,6 @@ export default function MeetingCard() {
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
-      debugger;
       const params = new URLSearchParams(searchParams);
       params.set(name, value);
       return params.toString();
