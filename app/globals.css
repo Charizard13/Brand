@@ -108,4 +108,60 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  h1 {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+
+  h2 {
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+  }
+
+  h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+
+  h5 {
+    @apply scroll-m-20 font-semibold tracking-tight;
+  }
+
+  p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+  }
+
+  blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
+
+  ul {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+}
+
+/* The part the thumb slides within */
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0;
+  border-radius: 8px;
+  border: 3px solid #f0f0f0;
+}
+
+/* Scrollbar corner */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+/* Hover state on thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a0a0a0;
 }
