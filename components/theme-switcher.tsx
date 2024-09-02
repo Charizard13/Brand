@@ -12,6 +12,8 @@ import { Laptop, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
+const ICON_SIZE = 16;
+
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -24,8 +26,6 @@ const ThemeSwitcher = () => {
   if (!mounted) {
     return null;
   }
-
-  const ICON_SIZE = 16;
 
   return (
     <DropdownMenu>
