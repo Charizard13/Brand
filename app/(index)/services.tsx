@@ -34,8 +34,8 @@ export default function Services() {
         Our Services
       </motion.h2>
       <div className="gap-6 lg:gap-12 grid lg:grid-cols-3">
-        {services.map((service, index) => (
-          <motion.div key={index} variants={fadeIn}>
+        {services.map((service) => (
+          <motion.div key={service.title} variants={fadeIn}>
             <Card className="border-gray-800 bg-gray-900">
               <CardHeader>
                 <service.icon className="mb-2 w-8 h-8 text-primary" />

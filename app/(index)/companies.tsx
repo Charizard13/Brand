@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../page";
 
+const companies = ["Homelend", "Mlm", "Artop AI", "Ng Finance"] as const;
 export default function Companies() {
   return (
     <>
@@ -11,18 +12,9 @@ export default function Companies() {
         Companies I've Worked With
       </motion.h2>
       <div className="justify-center items-center gap-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {[
-          "TechCorp",
-          "InnovateNow",
-          "FutureSoft",
-          "DataDynamics",
-          "CloudNine",
-          "QuantumCode",
-          "CyberSolutions",
-          "AIVentures",
-        ].map((company, index) => (
+        {companies.map((company) => (
           <motion.div
-            key={index}
+            key={company}
             variants={fadeIn}
             className="flex justify-center items-center"
           >

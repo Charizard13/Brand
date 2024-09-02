@@ -5,6 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
 export default function Contact() {
+  const inputClass =
+    "border-gray-700 bg-gray-900 text-gray-100 placeholder-gray-400";
   return (
     <div className="flex flex-col items-center space-y-4 text-center">
       <motion.div variants={fadeIn} className="space-y-2">
@@ -18,25 +20,10 @@ export default function Contact() {
       </motion.div>
       <motion.div variants={fadeIn} className="space-y-2 w-full max-w-sm">
         <form className="flex flex-col space-y-4">
-          <Input
-            placeholder="Your name"
-            className="border-gray-700 bg-gray-900 text-gray-100 placeholder-gray-400"
-          />
-          <Input
-            type="email"
-            placeholder="Your email"
-            className="border-gray-700 bg-gray-900 text-gray-100 placeholder-gray-400"
-          />
-          <Textarea
-            placeholder="Your message"
-            className="border-gray-700 bg-gray-900 text-gray-100 placeholder-gray-400"
-          />
-          <Button
-            type="submit"
-            className="bg-green-500 hover:bg-green-600 text-black"
-          >
-            Send Message
-          </Button>
+          <Input placeholder="Your name" className={inputClass} />
+          <Input type="email" placeholder="Your email" className={inputClass} />
+          <Textarea placeholder="Your message" className={inputClass} />
+          <Button type="submit">Send Message</Button>
         </form>
       </motion.div>
     </div>
