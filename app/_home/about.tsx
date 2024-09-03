@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { fadeIn } from "../page";
+import { fadeIn } from "./_const";
 import Image from "next/image";
 import { Check } from "lucide-react";
 
