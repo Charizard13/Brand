@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { fadeIn } from "../page";
+import { fadeIn } from "./_const";
 
 const companies = ["Homelend", "Mlm", "Artop AI", "Ng Finance"] as const;
 export default function Companies() {

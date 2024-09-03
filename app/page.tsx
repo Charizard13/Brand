@@ -1,11 +1,11 @@
 "use client";
 
-import Hero from "./(index)/hero";
-import Services from "./(index)/services";
-import About from "./(index)/about";
-import Companies from "./(index)/companies";
-import Testimonials from "./(index)/testimonials";
-import Contact from "./(index)/contact";
+import Hero from "./_home/hero";
+import Services from "./_home/services";
+import About from "./_home/about";
+import Companies from "./_home/companies";
+import Testimonials from "./_home/testimonials";
+import Contact from "./_home/contact";
 import { motion, Variants } from "framer-motion";
 
 const sections = [
@@ -16,20 +16,6 @@ const sections = [
   { id: "testimonials", component: Testimonials, bgClass: "" },
   { id: "contact", component: Contact, bgClass: "bg-gray-800" },
 ] as const;
-
-export const fadeIn: Variants = {
-  initial: {
-    opacity: 0,
-    y: 20,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
 
 const stagger: Variants = {
   animate: {
