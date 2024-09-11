@@ -72,10 +72,10 @@ export default function Contact() {
             className="font-bold text-3xl text-primary sm:text-4xl md:text-5xl tracking-tighter"
             id={elementsIds.contacts}
           >
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="mx-auto max-w-[700px] text-gray-400 md:text-xl">
-            Ready to bring your ideas to life? Get in touch and let's start
+            Ready to bring your ideas to life? Get in touch and let&apos;s start
             building something amazing.
           </p>
         </motion.div>
