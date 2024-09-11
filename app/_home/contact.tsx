@@ -53,9 +53,9 @@ export default function Contact() {
     },
     onSuccess: () => {
       form.reset();
-      toast("Message sent successfully");
+      toast("Message sent successfully, I will get back to you soon.");
     },
-    onError: () =>
+    onError: (error) =>
       form.setError("message", {
         message: "Failed to send message",
       }),
