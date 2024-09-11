@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
 import Link from "next/link";
-import { elementsIds, fadeIn } from "./const";
+import { elementsIds, fadeIn, socialLinks } from "./const";
 
 export default function Hero() {
   const handleButtonClick = (elementId: keyof typeof elementsIds) => {
@@ -38,7 +38,7 @@ export default function Hero() {
       </motion.div>
       <motion.div variants={fadeIn} className="mt-4">
         <Link
-          href="https://www.linkedin.com/in/talpiven"
+          href={socialLinks.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center space-x-2 text-primary hover:text-green-400"
