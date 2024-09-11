@@ -8,6 +8,27 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 
+const testimonials = [
+  {
+    name: "Eli",
+    role: "CTO, Homelend",
+    content:
+      "We're incredibly grateful for the support we received on our frontend tasks. Their ability to step in and deliver high-quality work when we needed it most was invaluable to our project's success.",
+  },
+  {
+    name: "Itamar",
+    role: "Owner, Tuby Design",
+    content:
+      "As a small business owner in UI/UX design, I've worked with many developers, but none quite like this. They consistently deliver fast, beautiful websites for both my business and my clients. Their work has significantly enhanced our design implementations.",
+  },
+  {
+    name: "Avia",
+    role: "CEO, Workflow Solutions",
+    content:
+      "The CRM system they built for us has revolutionized our workflow. Not only did they understand our unique needs, but they also created a solution that saves time for both me and my employees. Their expertise in building practical, efficient systems is outstanding.",
+  },
+] as const;
+
 export default function Testimonials() {
   return (
     <>
@@ -18,28 +39,9 @@ export default function Testimonials() {
         What Clients Say
       </motion.h2>
       <div className="gap-6 lg:gap-12 grid lg:grid-cols-3">
-        {[
-          {
-            name: "John Doe",
-            role: "CEO, TechCorp",
-            content:
-              "Working with DevGenius has been a game-changer for our business. Their full-stack expertise brought our vision to life seamlessly.",
-          },
-          {
-            name: "Jane Smith",
-            role: "Founder, StartupX",
-            content:
-              "The mobile app they developed for us exceeded our expectations. Professional, timely, and incredibly skilled.",
-          },
-          {
-            name: "Mike Johnson",
-            role: "CTO, InnovateNow",
-            content:
-              "Their web application development skills are top-notch. They delivered a complex project on time and within budget.",
-          },
-        ].map((testimonial, index) => (
+        {testimonials.map((testimonial, index) => (
           <motion.div key={index} variants={fadeIn}>
-            <Card className="border-gray-800 bg-gray-900">
+            <Card className="border-gray-800 bg-gray-900 transition-all duration-300 hover:scale-105 flex flex-col hover:shadow-lg hover:shadow-primary/20 h-[300px]">
               <CardHeader>
                 <CardTitle className="text-primary">
                   {testimonial.name}
@@ -48,8 +50,8 @@ export default function Testimonials() {
                   {testimonial.role}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="text-gray-300">
-                "{testimonial.content}"
+              <CardContent className="flex flex-grow items-center text-gray-300">
+                <p className="line-clamp-4">"{testimonial.content}"</p>
               </CardContent>
             </Card>
           </motion.div>
