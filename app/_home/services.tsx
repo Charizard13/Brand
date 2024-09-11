@@ -22,13 +22,14 @@ const services = [
   },
 ] as const;
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { fadeIn } from "./_const";
+import { elementsIds, fadeIn } from "./const";
 
 export default function Services() {
   return (
     <>
       <motion.h2
         variants={fadeIn}
+        id={elementsIds.services}
         className="mb-8 font-bold text-3xl text-center text-primary sm:text-4xl md:text-5xl tracking-tighter"
       >
         Our Services

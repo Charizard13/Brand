@@ -13,3 +13,8 @@ export const fadeIn: Variants = {
     },
   },
 };
+
+export const elementsIds = {
+  services: "services",
+  contacts: "contacts",
+} as const;

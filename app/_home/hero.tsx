@@ -2,9 +2,16 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
 import Link from "next/link";
-import { fadeIn } from "./_const";
+import { elementsIds, fadeIn } from "./const";
 
 export default function Hero() {
+  const handleButtonClick = (elementId: keyof typeof elementsIds) => {
+    const element = document.getElementById(elementsIds[elementId]);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="flex flex-col items-center space-y-4 text-center">
       <motion.div variants={fadeIn} className="space-y-2">
@@ -18,10 +25,13 @@ export default function Hero() {
         </h3>
       </motion.div>
       <motion.div variants={fadeIn} className="space-x-4">
-        <Button>Contact Us</Button>
+        <Button onClick={() => handleButtonClick("contacts")}>
+          Contact Us
+        </Button>
         <Button
           variant="outline"
           className="border-primary hover:bg-primary text-primary hover:text-black"
+          onClick={() => handleButtonClick("services")}
         >
           Learn More
         </Button>
