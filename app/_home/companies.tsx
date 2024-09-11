@@ -17,7 +17,7 @@ export default function Companies() {
         variants={fadeIn}
         className="mb-8 font-bold text-3xl text-center text-primary sm:text-4xl md:text-5xl tracking-tighter"
       >
-        Companies I've Worked With
+        Companies I&apos;ve Worked With
       </motion.h2>
       <div className="justify-center items-center gap-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
         {companies.map((company) => (

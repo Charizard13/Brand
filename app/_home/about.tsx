@@ -15,10 +15,10 @@ export default function About() {
       <motion.div variants={fadeIn} className="space-y-4">
         <h2 className="text-primary">About Me</h2>
         <p className="text-gray-400">
-          As an experienced full-stack developer, I've helped businesses of all
-          sizes bring their ideas to life. My expertise spans across multiple
-          technologies and frameworks, allowing me to choose the best tools for
-          each unique project.
+          As an experienced full-stack developer, I&apos;ve helped businesses of
+          all sizes bring their ideas to life. My expertise spans across
+          multiple technologies and frameworks, allowing me to choose the best
+          tools for each unique project.
         </p>
         <ul className="gap-2 grid">
           {about.map((item) => (
@@ -40,9 +40,7 @@ export default function About() {
         <Image
           src={socialLinks.linkedinImageUrl}
           alt="Tal Piven LinkedIn Profile Picture"
-          layout="fill"
-          objectFit="cover"
-          className="rounded-xl"
+          className="rounded-xl w-full h-full object-cover"
         />
       </motion.div>
     </div>
