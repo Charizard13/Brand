@@ -40,6 +40,7 @@ export default function About() {
         <Image
           src={socialLinks.linkedinImageUrl}
           alt="Tal Piven LinkedIn Profile Picture"
+          fill
           className="rounded-xl w-full h-full object-cover"
         />
       </motion.div>
