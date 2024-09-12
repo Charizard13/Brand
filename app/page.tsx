@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import Hero from "./_home/hero";
 import Services from "./_home/services";
 import About from "./_home/about";
@@ -26,6 +28,30 @@ const stagger: Variants = {
 };
 
 export default function Index() {
+  const router = useRouter();
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+            router.push(`?section=${entry.target.id}`, { scroll: false });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    sections.forEach(({ id }) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [router]);
+
   return (
     <div className="flex flex-col bg-gray-900 min-h-screen font-mono text-gray-100">
       <main className="flex-1">
