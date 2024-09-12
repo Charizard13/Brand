@@ -10,7 +10,6 @@ import {
   HydrationBoundary,
   useMutation,
 } from "@tanstack/react-query";
-import { useState } from "react";
 import { supabaseClient } from "@/utils/supabase/client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -21,8 +20,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { getQueryClient } from "../get-query-client";
 import { toast } from "sonner";
+import { getQueryClient } from "../providers";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
