@@ -22,7 +22,7 @@ export default function Header() {
     <header className="flex items-center gap-2 border-gray-800 px-4 lg:px-6 border-b h-14">
       <Link className="flex justify-center items-center" href="#">
         <Code className="w-6 h-6 text-primary" />
-        <span className="ml-2 font-bold font-mono text-primary">DevGenius</span>
+        <span className="ml-2 font-bold font-mono text-primary">Elfo</span>
       </Link>
 
       <nav className="md:flex gap-4 sm:gap-6 hidden ml-auto">
