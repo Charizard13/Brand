@@ -2,33 +2,13 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
 import Link from "next/link";
-import { elementsIds, fadeIn, socialLinks } from "./const";
-import { useState, useEffect } from "react";
+import { fadeIn, socialLinks } from "@/utils/const";
 import FloatingContactButton from "@/components/layout/contactButton";
+import { handleButtonClickById } from "@/utils/utils";
+import useContactButton from "./hooks/useContactButton";
 
 export default function Hero() {
-  const [isButtonVisible, setIsButtonVisible] = useState(true);
-
-  const handleButtonClick = (elementId: keyof typeof elementsIds) => {
-    const element = document.getElementById(elementsIds[elementId]);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.getElementById("hero-section");
-      if (heroSection) {
-        const rect = heroSection.getBoundingClientRect();
-        setIsButtonVisible(rect.bottom > 0);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+  const { isVisible } = useContactButton();
   return (
     <div
       id="hero-section"
@@ -45,15 +25,13 @@ export default function Hero() {
         </h3>
       </motion.div>
       <motion.div variants={fadeIn} className="space-x-4">
-        {isButtonVisible && (
-          <Button onClick={() => handleButtonClick("contacts")}>
-            Contact Us
-          </Button>
-        )}
+        <Button onClick={() => handleButtonClickById("contacts")}>
+          Contact Us
+        </Button>
         <Button
           variant="outline"
           className="border-primary hover:bg-primary text-primary hover:text-black"
-          onClick={() => handleButtonClick("services")}
+          onClick={() => handleButtonClickById("services")}
         >
           Learn More
         </Button>
@@ -69,10 +47,7 @@ export default function Hero() {
           <span>Connect on LinkedIn</span>
         </Link>
       </motion.div>
-      <FloatingContactButton
-        isVisible={!isButtonVisible}
-        onClick={() => handleButtonClick("contacts")}
-      />
+      <FloatingContactButton isVisible={!isVisible} />
     </div>
   );
 }

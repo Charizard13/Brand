@@ -1,16 +1,25 @@
 import { redirect } from "next/navigation";
+import { elementsIds } from "./const";
+
+/**
+ * Scrolls to the element with the specified ID.
+ * @param {keyof typeof elementsIds} elementId - The ID of the element to scroll to.
+ */
+export const handleButtonClickById = (elementId: keyof typeof elementsIds) => {
+  const element = document.getElementById(elementsIds[elementId]);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 /**
  * Redirects to a specified path with an encoded message as a query parameter.
- * @param {('error' | 'success')} type - The type of message, either 'error' or 'success'.
- * @param {string} path - The path to redirect to.
- * @param {string} message - The message to be encoded and added as a query parameter.
- * @returns {never} This function doesn't return as it triggers a redirect.
+ * @returns This function doesn't return as it triggers a redirect.
  */
 export function encodedRedirect(
   type: "error" | "success",
   path: string,
-  message: string,
-) {
+  message: string
+): never {
   return redirect(`${path}?${type}=${encodeURIComponent(message)}`);
 }

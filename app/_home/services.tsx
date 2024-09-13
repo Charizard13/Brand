@@ -22,7 +22,7 @@ const services = [
   },
 ] as const;
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { elementsIds, fadeIn } from "./const";
+import { elementsIds, fadeIn } from "../../utils/const";
 
 export default function Services() {
   return (

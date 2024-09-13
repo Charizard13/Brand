@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeSwitcher } from "../theme-switcher";
 
 const links = [
   { href: "#", text: "Terms of Service" },
@@ -23,6 +24,7 @@ export default function Footer() {
           </Link>
         ))}
       </nav>
+      <ThemeSwitcher />
     </footer>
   );
 }
