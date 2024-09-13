@@ -4,8 +4,8 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 
 const companyInfo = [
-  "Founded in 2023 to address the growing need for innovative software solutions",
-  "Vision: To empower businesses with cutting-edge technology and exceptional service",
+  "Founded to address the growing need for innovative software solutions",
+  "Our vision is to empower businesses with cutting-edge technology and exceptional service",
   "Specializing in tailored full-stack development for businesses of all sizes",
 ] as const;
 
