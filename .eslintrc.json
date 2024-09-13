@@ -1,6 +1,17 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "no-unused-vars": "error"
-  }
+    "no-unused-vars": [
+      "error",
+      { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.d.ts"],
+      "rules": {
+        "no-unused-vars": "off"
+      }
+    }
+  ]
 }
