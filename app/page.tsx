@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Hero from "./_home/hero";
 import Services from "./_home/services";
 import About from "./_home/about";

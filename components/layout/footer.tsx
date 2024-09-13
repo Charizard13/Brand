@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ThemeSwitcher } from "@/components/theme-switcher";
 
 const links = [
   { href: "#", text: "Terms of Service" },
