@@ -18,7 +18,7 @@ const FloatingContactButton: React.FC<FloatingContactButtonProps> = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.3 }}
-          className="md:top-4 right-4 md:right-4 bottom-4 z-50 fixed"
+          className="right-4 bottom-4 z-50 fixed"
         >
           <Button onClick={onClick}>Contact Us</Button>
         </motion.div>
