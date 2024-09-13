@@ -39,7 +39,6 @@ export default function Header() {
       <div className="md:block hidden">
         <ThemeSwitcher />
       </div>
-
       <Button
         className="md:hidden ml-auto"
         size="icon"

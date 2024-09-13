@@ -27,32 +27,43 @@ const stagger: Variants = {
   },
 };
 
-export default function Index() {
+export default function Home() {
   const router = useRouter();
-  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-            router.push(`?section=${entry.target.id}`, { scroll: false });
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      const scrollPosition = window.scrollY + 100; // Add offset for header
+
+      sections.forEach((section) => {
+        if (
+          section instanceof HTMLElement &&
+          section.offsetTop <= scrollPosition &&
+          section.offsetTop + section.offsetHeight > scrollPosition
+        ) {
+          const id = section.getAttribute("id");
+          if (id) {
+            router.replace(`/#${id}`, { scroll: false });
           }
-        });
-      },
-      {
-        threshold: 0.5,
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [router]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
       }
-    );
-
-    sections.forEach(({ id }) => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
-    });
-
-    return () => observer.disconnect();
-  }, [router, activeSection]);
+    }
+  }, []);
 
   return (
     <div className="flex flex-col bg-gray-900 min-h-screen font-mono text-gray-100">
