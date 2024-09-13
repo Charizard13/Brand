@@ -34,7 +34,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Header />
-            <main>{children}</main>
+            <main className="mt-14">{children}</main>
             <Toaster />
             <Footer />
             <VercelToolbar />

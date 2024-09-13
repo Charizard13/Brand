@@ -1,7 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import Hero from "./_home/hero";
 import Services from "./_home/services";
 import About from "./_home/about";
@@ -10,24 +8,26 @@ import Testimonials from "./_home/testimonials";
 import Contact from "./_home/contact";
 import { motion, Variants } from "framer-motion";
 
+const bgClass = "bg-white dark:bg-gray-900";
+
 const sections = [
   { id: "hero", component: Hero, bgClass: "" },
   {
     id: "services",
     component: Services,
-    bgClass: "bg-gray-100 dark:bg-gray-800",
+    bgClass,
   },
   { id: "about", component: About, bgClass: "" },
   {
     id: "companies",
     component: Companies,
-    bgClass: "bg-gray-100 dark:bg-gray-800",
+    bgClass,
   },
   { id: "testimonials", component: Testimonials, bgClass: "" },
   {
     id: "contact",
     component: Contact,
-    bgClass: "bg-gray-100 dark:bg-gray-800",
+    bgClass,
   },
 ] as const;
 
@@ -40,43 +40,6 @@ const stagger: Variants = {
 };
 
 export default function Home() {
-  const router = useRouter();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
-      const scrollPosition = window.scrollY + 100; // Add offset for header
-
-      sections.forEach((section) => {
-        if (
-          section instanceof HTMLElement &&
-          section.offsetTop <= scrollPosition &&
-          section.offsetTop + section.offsetHeight > scrollPosition
-        ) {
-          const id = section.getAttribute("id");
-          if (id) {
-            router.replace(`/#${id}`, { scroll: false });
-          }
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [router]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const hash = window.location.hash;
-      if (hash) {
-        const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    }
-  }, []);
-
   return (
     <div className="flex flex-col bg-white dark:bg-gray-900 min-h-screen font-mono text-gray-900 dark:text-gray-100">
       <main className="flex-1">
