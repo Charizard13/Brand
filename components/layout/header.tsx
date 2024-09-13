@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { handleButtonClickById } from "@/utils/utils";
-import useContactButton from "@/app/_home/hooks/useContactButton";
+import useContactButton from "@/app/_home/_hooks/useContactButton";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -31,13 +31,12 @@ export default function Header() {
           Elfo Software
         </span>
       </Link>
-
       <nav className="md:flex flex-grow justify-center items-center gap-4 sm:gap-6 hidden">
         {links.map(({ href, label }) => (
           <Link
             key={`${href}${label}`}
             href={href}
-            className="font-medium text-gray-800 text-sm hover:text-primary dark:text-gray-200 transition-colors"
+            className="font-medium text-sm hover:text-primary"
           >
             {label}
           </Link>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { fadeIn, socialLinks } from "../../utils/const";
+import { fadeIn, socialLinks } from "../../../utils/const";
 import Image from "next/image";
 import { Check } from "lucide-react";
 
