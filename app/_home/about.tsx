@@ -16,8 +16,8 @@ export default function About() {
         <h2 className="text-primary">About Me</h2>
         <p className="text-black dark:text-white text-opacity-60 dark:text-opacity-70">
           As an experienced full-stack developer, I&apos;ve helped businesses of
-          all sizes bring their ideas to life. My expertise spans across
-          multiple technologies and frameworks, allowing me to choose the best
+          all sizes bring their ideas to life. our expertise spans across
+          multiple technologies and frameworks, allowing us to choose the best
           tools for each unique project.
         </p>
         <ul className="gap-2 grid">

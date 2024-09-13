@@ -7,6 +7,7 @@ import { Providers } from "./providers";
 import { Toaster } from "@/components/ui/sonner";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import { Analytics } from "@vercel/analytics/react";
+import { Metadata } from "next";
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
@@ -15,14 +16,44 @@ export const metadata = {
   metadataBase: new URL(defaultUrl),
   title: "Full-Stack Solutions for Your Digital Success",
   description:
-    "Transforming ideas into powerful, scalable applications. Your vision, my expertise.",
-};
+    "Transforming ideas into powerful, scalable applications. Your vision, our expertise.",
+  applicationName: "Elfo Software",
+  generator: "Next.js",
+  keywords: ["Elfo Software", "Full-Stack Solutions", "Digital Success"],
+  referrer: "origin-when-cross-origin",
+  creator: "Elfo Software",
+  publisher: "Elfo Software",
+  category: "Software Development",
+  robots: "index, follow",
+  openGraph: {
+    images: ["./hero.png"],
+    type: "website",
+    url: defaultUrl,
+    siteName: "Elfo Software",
+    title: "Full-Stack Solutions for Your Digital Success",
+    description:
+      "Transforming ideas into powerful, scalable applications. Your vision, our expertise.",
+  },
+  twitter: {
+    images: ["./hero.png"],
+    card: "summary_large_image",
+    title: "Full-Stack Solutions for Your Digital Success",
+    description:
+      "Transforming ideas into powerful, scalable applications. Your vision, our expertise.",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+} satisfies Metadata;
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const shouldInjectToolbar = process.env.NODE_ENV === "development";
+  const shouldInjectAnalytics = process.env.NODE_ENV === "production";
+
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
       <body className="bg-background text-foreground">
@@ -37,8 +68,8 @@ export default function RootLayout({
             <main className="mt-14">{children}</main>
             <Toaster />
             <Footer />
-            <VercelToolbar />
-            <Analytics />
+            {shouldInjectToolbar && <VercelToolbar />}
+            {shouldInjectAnalytics && <Analytics />}
           </ThemeProvider>
         </Providers>
       </body>

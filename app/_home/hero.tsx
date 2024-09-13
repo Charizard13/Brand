@@ -21,7 +21,7 @@ export default function Hero() {
         </h1>
         <h3 className="mx-auto max-w-[700px] text-gray-400 md:text-xl">
           Transforming ideas into powerful, scalable applications. Your vision,
-          my expertise.
+          our expertise.
         </h3>
       </motion.div>
       <motion.div variants={fadeIn} className="space-x-4">
