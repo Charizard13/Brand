@@ -5,7 +5,8 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { Providers } from "./providers";
 import { Toaster } from "@/components/ui/sonner";
-
+import { VercelToolbar } from "@vercel/toolbar/next";
+import { Analytics } from "@vercel/analytics/react";
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
@@ -36,6 +37,8 @@ export default function RootLayout({
             <main>{children}</main>
             <Toaster />
             <Footer />
+            <VercelToolbar />
+            <Analytics />
           </ThemeProvider>
         </Providers>
       </body>
