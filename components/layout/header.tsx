@@ -5,7 +5,6 @@ import { Code, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { ThemeSwitcher } from "../theme-switcher";
 import { handleButtonClickById } from "@/utils/utils";
 import useContactButton from "@/app/_home/hooks/useContactButton";
 
@@ -38,7 +37,7 @@ export default function Header() {
           <Link
             key={`${href}${label}`}
             href={href}
-            className="font-medium text-sm hover:text-primary transition-colors"
+            className="font-medium text-gray-800 text-sm hover:text-primary dark:text-gray-200 transition-colors"
           >
             {label}
           </Link>
@@ -63,14 +62,14 @@ export default function Header() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="top-0 right-0 fixed flex flex-col gap-4 bg-card p-6 w-64 h-full"
+            className="top-0 right-0 fixed flex flex-col gap-4 bg-background shadow-lg p-6 border-border border-l w-64 h-full"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.3 }}
           >
             <div
-              className="fixed inset-0 bg-black bg-opacity-50"
+              className="fixed inset-0 bg-background/50 dark:bg-background/80"
               onClick={() => setIsMenuOpen(false)}
             />
             <div className="relative z-10 flex flex-col items-end">
@@ -78,7 +77,7 @@ export default function Header() {
                 <Link
                   key={`${href}${label}`}
                   href={href}
-                  className="block text-right py-2 font-medium text-sm hover:text-primary transition-colors"
+                  className="block text-right py-2 font-medium text-foreground text-sm hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {label}
