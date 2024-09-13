@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { fadeIn } from "./const";
+import { fadeIn } from "../../utils/const";
 import {
   Card,
   CardContent,
@@ -64,7 +64,7 @@ export default function Companies() {
             variants={fadeIn}
             className="flex justify-center items-center"
           >
-            <Card className="flex flex-col bg-white dark:bg-gray-800 shadow-md hover:shadow-lg w-full h-[300px] transition-all duration-300 ease-in-out hover:scale-105">
+            <Card className="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg w-full h-[300px] transition-all duration-300 ease-in-out hover:scale-105">
               <CardHeader className="flex-shrink-0">
                 <CardTitle>{company.name}</CardTitle>
                 <CardDescription className="flex flex-wrap gap-2">

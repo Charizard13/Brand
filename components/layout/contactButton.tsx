@@ -1,15 +1,17 @@
+"use client";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { handleButtonClickById } from "@/utils/utils";
 
 interface FloatingContactButtonProps {
   isVisible: boolean;
-  onClick: () => void;
 }
 
 const FloatingContactButton: React.FC<FloatingContactButtonProps> = ({
   isVisible,
-  onClick,
 }) => {
+  const handleClick = () => handleButtonClickById("contacts");
   return (
     <AnimatePresence>
       {isVisible && (
@@ -18,9 +20,9 @@ const FloatingContactButton: React.FC<FloatingContactButtonProps> = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.3 }}
-          className="right-4 bottom-4 z-50 fixed"
+          className="block right-4 bottom-4 z-50 fixed md:hidden"
         >
-          <Button onClick={onClick}>Contact Us</Button>
+          <Button onClick={handleClick}>Contact Us</Button>
         </motion.div>
       )}
     </AnimatePresence>

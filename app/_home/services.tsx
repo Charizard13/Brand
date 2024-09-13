@@ -22,7 +22,7 @@ const services = [
   },
 ] as const;
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { elementsIds, fadeIn } from "./const";
+import { elementsIds, fadeIn } from "../../utils/const";
 
 export default function Services() {
   return (
@@ -48,7 +48,7 @@ export default function Services() {
               }}
               className="h-full"
             >
-              <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 h-full">
+              <Card className="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg w-full h-[300px] transition-all duration-300 ease-in-out hover:scale-105">
                 <CardHeader>
                   <service.icon className="mb-2 w-8 h-8 text-primary" />
                   <CardTitle className="text-primary">
