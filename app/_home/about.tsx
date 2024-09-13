@@ -18,44 +18,56 @@ const founderInfo = [
 export default function About() {
   return (
     <div className="items-center gap-6 lg:gap-12 grid lg:grid-cols-2">
-      <motion.div variants={fadeIn} className="space-y-4">
-        <h2 className="text-primary">About Us</h2>
-        <p className="text-black dark:text-white text-opacity-60 dark:text-opacity-70">
+      <motion.div variants={fadeIn} className="space-y-6">
+        <h2 className="font-bold text-3xl text-primary">About Us</h2>
+        <p className="text-black text-lg dark:text-white text-opacity-80 dark:text-opacity-90">
           Elfo Software Ltd. was established to bridge the gap between
           innovative ideas and their digital realization. Our mission is to
           provide top-tier software solutions that address the unique challenges
           faced by modern businesses.
         </p>
-        <ul className="gap-2 grid">
-          {companyInfo.map((item) => (
-            <motion.li
-              key={item}
-              variants={fadeIn}
-              className="flex items-center text-black dark:text-white text-opacity-80 dark:text-opacity-90"
-            >
-              <Check className="mr-2 w-4 h-4 text-primary" />
-              {item}
-            </motion.li>
-          ))}
-        </ul>
-        <h3 className="mt-6 text-primary">About the Founder</h3>
-        <p className="text-black dark:text-white text-opacity-60 dark:text-opacity-70">
-          As the founder and owner of Elfo Software Ltd., I bring a wealth of
-          experience to every project:
-        </p>
-        <ul className="gap-2 grid">
-          {founderInfo.map((item) => (
-            <motion.li
-              key={item}
-              variants={fadeIn}
-              className="flex items-center text-black dark:text-white text-opacity-80 dark:text-opacity-90"
-            >
-              <Check className="mr-2 w-4 h-4 text-primary" />
-              {item}
-            </motion.li>
-          ))}
-        </ul>
+
+        <div className="mt-8">
+          <h3 className="mb-4 font-semibold text-primary text-xl">
+            Company Overview
+          </h3>
+          <ul className="gap-2 grid">
+            {companyInfo.map((item) => (
+              <motion.li
+                key={item}
+                variants={fadeIn}
+                className="flex items-center text-black text-sm dark:text-white text-opacity-70 dark:text-opacity-80"
+              >
+                <Check className="mr-2 w-4 h-4 text-primary" />
+                {item}
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-8">
+          <h3 className="mb-4 font-semibold text-primary text-xl">
+            About the Founder
+          </h3>
+          <p className="mb-2 text-black text-sm dark:text-white text-opacity-70 dark:text-opacity-80">
+            As the founder and owner of Elfo Software Ltd., I bring a wealth of
+            experience to every project:
+          </p>
+          <ul className="gap-2 grid">
+            {founderInfo.map((item) => (
+              <motion.li
+                key={item}
+                variants={fadeIn}
+                className="flex items-center text-black text-sm dark:text-white text-opacity-70 dark:text-opacity-80"
+              >
+                <Check className="mr-2 w-4 h-4 text-primary" />
+                {item}
+              </motion.li>
+            ))}
+          </ul>
+        </div>
       </motion.div>
+
       <motion.div
         variants={fadeIn}
         className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px]"
