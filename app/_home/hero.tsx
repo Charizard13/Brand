@@ -3,8 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
 import Link from "next/link";
 import { elementsIds, fadeIn, socialLinks } from "./const";
+import { useState, useEffect } from "react";
+import FloatingContactButton from "@/components/layout/contactButton";
 
 export default function Hero() {
+  const [isButtonVisible, setIsButtonVisible] = useState(true);
+
   const handleButtonClick = (elementId: keyof typeof elementsIds) => {
     const element = document.getElementById(elementsIds[elementId]);
     if (element) {
@@ -12,8 +16,24 @@ export default function Hero() {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.getElementById("hero-section");
+      if (heroSection) {
+        const rect = heroSection.getBoundingClientRect();
+        setIsButtonVisible(rect.bottom > 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="flex flex-col items-center space-y-4 text-center">
+    <div
+      id="hero-section"
+      className="flex flex-col items-center space-y-4 text-center"
+    >
       <motion.div variants={fadeIn} className="space-y-2">
         <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl/none tracking-tighter">
           Full-Stack Solutions for Your{" "}
@@ -25,9 +45,11 @@ export default function Hero() {
         </h3>
       </motion.div>
       <motion.div variants={fadeIn} className="space-x-4">
-        <Button onClick={() => handleButtonClick("contacts")}>
-          Contact Us
-        </Button>
+        {isButtonVisible && (
+          <Button onClick={() => handleButtonClick("contacts")}>
+            Contact Us
+          </Button>
+        )}
         <Button
           variant="outline"
           className="border-primary hover:bg-primary text-primary hover:text-black"
@@ -41,12 +63,16 @@ export default function Hero() {
           href={socialLinks.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center space-x-2 text-primary hover:text-green-400"
+          className="inline-flex items-center space-x-2 text-primary hover:text-primary"
         >
           <Linkedin className="w-5 h-5" />
           <span>Connect on LinkedIn</span>
         </Link>
       </motion.div>
+      <FloatingContactButton
+        isVisible={!isButtonVisible}
+        onClick={() => handleButtonClick("contacts")}
+      />
     </div>
   );
 }

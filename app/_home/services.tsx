@@ -48,7 +48,7 @@ export default function Services() {
               }}
               className="h-full"
             >
-              <Card className="border-gray-800 bg-gray-900 h-full">
+              <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 h-full">
                 <CardHeader>
                   <service.icon className="mb-2 w-8 h-8 text-primary" />
                   <CardTitle className="text-primary">
@@ -56,7 +56,9 @@ export default function Services() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-400">{service.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    {service.description}
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>

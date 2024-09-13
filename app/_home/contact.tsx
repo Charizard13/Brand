@@ -33,7 +33,8 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function Contact() {
   const inputClass =
-    "border-gray-700 bg-gray-900 text-gray-100 placeholder-gray-400";
+    "border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400";
+
   const queryClient = getQueryClient();
 
   const form = useForm<ContactFormData>({
@@ -73,7 +74,7 @@ export default function Contact() {
           >
             Let&apos;s Work Together
           </h2>
-          <p className="mx-auto max-w-[700px] text-gray-400 md:text-xl">
+          <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl dark:text-gray-400">
             Ready to bring your ideas to life? Get in touch and let&apos;s start
             building something amazing.
           </p>
