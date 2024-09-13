@@ -41,7 +41,9 @@ export default function Index() {
           }
         });
       },
-      { threshold: 0.3 }
+      {
+        threshold: 0.5,
+      }
     );
 
     sections.forEach(({ id }) => {
@@ -50,7 +52,7 @@ export default function Index() {
     });
 
     return () => observer.disconnect();
-  }, [router]);
+  }, [router, activeSection]);
 
   return (
     <div className="flex flex-col bg-gray-900 min-h-screen font-mono text-gray-100">
