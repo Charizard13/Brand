@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
@@ -5,7 +7,7 @@ import Link from "next/link";
 import { fadeIn, socialLinks } from "@/utils/const";
 import FloatingContactButton from "@/components/layout/contactButton";
 import { handleButtonClickById } from "@/utils/utils";
-import useContactButton from "./hooks/useContactButton";
+import useContactButton from "@/app/_home/_hooks/useContactButton";
 
 export default function Hero() {
   const { isVisible } = useContactButton();

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { fadeIn } from "../../utils/const";
+import { fadeIn } from "../../../utils/const";
 import {
   Card,
   CardContent,
@@ -67,11 +67,11 @@ export default function Companies() {
             <Card className="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg w-full h-[300px] transition-all duration-300 ease-in-out hover:scale-105">
               <CardHeader className="flex-shrink-0">
                 <CardTitle>{company.name}</CardTitle>
-                <CardDescription className="flex flex-wrap gap-2">
-                  {company.categories.map((categories) => (
-                    <Badge key={categories}>{categories}</Badge>
+                <div className="flex flex-wrap gap-2 text-muted-foreground text-sm">
+                  {company.categories.map((category) => (
+                    <Badge key={category}>{category}</Badge>
                   ))}
-                </CardDescription>
+                </div>
               </CardHeader>
               <CardContent className="flex-grow overflow-hidden">
                 <p className="line-clamp-4">{company.description}</p>

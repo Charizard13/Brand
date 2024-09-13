@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { fadeIn } from "../../utils/const";
+import { fadeIn } from "../../../utils/const";
 import {
   Card,
   CardContent,

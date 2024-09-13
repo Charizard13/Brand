@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { elementsIds, fadeIn } from "../../utils/const";
+import { elementsIds, fadeIn } from "../../../utils/const";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -21,7 +21,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { toast } from "sonner";
-import { getQueryClient } from "../providers";
+import { getQueryClient } from "../../providers";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
