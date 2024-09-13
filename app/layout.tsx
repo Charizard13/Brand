@@ -27,25 +27,6 @@ export const metadata = {
   publisher: "Elfo Software",
   category: "Software Development",
   robots: "index, follow",
-  openGraph: {
-    images: ["./hero.png"],
-    type: "website",
-    url: defaultUrl,
-    siteName: "Elfo Software",
-    title: "Full-Stack Solutions for Your Digital Success",
-    description:
-      "Transforming ideas into powerful, scalable applications. Your vision, our expertise.",
-  },
-  twitter: {
-    images: ["./hero.png"],
-    card: "summary_large_image",
-    title: "Full-Stack Solutions for Your Digital Success",
-    description:
-      "Transforming ideas into powerful, scalable applications. Your vision, our expertise.",
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
 } satisfies Metadata;
 
 export default function RootLayout({
