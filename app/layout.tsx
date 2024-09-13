@@ -8,6 +8,8 @@ import { Toaster } from "@/components/ui/sonner";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
@@ -53,6 +55,7 @@ export default function RootLayout({
 }) {
   const shouldInjectToolbar = process.env.NODE_ENV === "development";
   const shouldInjectAnalytics = process.env.NODE_ENV === "production";
+  const shouldInjectSpeedInsights = process.env.NODE_ENV === "production";
 
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
@@ -70,6 +73,7 @@ export default function RootLayout({
             <Footer />
             {shouldInjectToolbar && <VercelToolbar />}
             {shouldInjectAnalytics && <Analytics />}
+            {shouldInjectSpeedInsights && <SpeedInsights />}
           </ThemeProvider>
         </Providers>
       </body>
