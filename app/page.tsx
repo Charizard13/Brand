@@ -12,11 +12,23 @@ import { motion, Variants } from "framer-motion";
 
 const sections = [
   { id: "hero", component: Hero, bgClass: "" },
-  { id: "services", component: Services, bgClass: "bg-gray-800" },
+  {
+    id: "services",
+    component: Services,
+    bgClass: "bg-gray-100 dark:bg-gray-800",
+  },
   { id: "about", component: About, bgClass: "" },
-  { id: "companies", component: Companies, bgClass: "bg-gray-800" },
+  {
+    id: "companies",
+    component: Companies,
+    bgClass: "bg-gray-100 dark:bg-gray-800",
+  },
   { id: "testimonials", component: Testimonials, bgClass: "" },
-  { id: "contact", component: Contact, bgClass: "bg-gray-800" },
+  {
+    id: "contact",
+    component: Contact,
+    bgClass: "bg-gray-100 dark:bg-gray-800",
+  },
 ] as const;
 
 const stagger: Variants = {
@@ -66,7 +78,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col bg-gray-900 min-h-screen font-mono text-gray-100">
+    <div className="flex flex-col bg-white dark:bg-gray-900 min-h-screen font-mono text-gray-900 dark:text-gray-100">
       <main className="flex-1">
         {sections.map(({ id, component: Component, bgClass }, index) => (
           <section
