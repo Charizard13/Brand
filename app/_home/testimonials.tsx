@@ -23,7 +23,7 @@ const testimonials = [
   },
   {
     name: "Avia",
-    role: "CEO, Workflow Solutions",
+    role: "CEO, Ng Finance",
     content:
       "The CRM system they built for us has revolutionized our workflow. Not only did they understand our unique needs, but they also created a solution that saves time for both me and my employees. Their expertise in building practical, efficient systems is outstanding.",
   },
@@ -51,7 +51,9 @@ export default function Testimonials() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-grow items-center text-gray-700 dark:text-gray-300">
-                <p className="line-clamp-4">"{testimonial.content}"</p>
+                <p className="line-clamp-4">
+                  &quot;{testimonial.content}&quot;
+                </p>
               </CardContent>
             </Card>
           </motion.div>
