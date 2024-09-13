@@ -13,17 +13,17 @@ const testimonials = [
     name: "Eli",
     role: "CTO, Homelend",
     content:
-      "We&quot;re incredibly grateful for the support we received on our frontend tasks. Their ability to step in and deliver high-quality work when we needed it most was invaluable to our project&quot;s success.",
+      "We're incredibly grateful for the support we received on our frontend tasks. Their ability to step in and deliver high-quality work when we needed it most was invaluable to our project's success.",
   },
   {
     name: "Itamar",
     role: "Owner, Tuby Design",
     content:
-      "As a small business owner in UI/UX design, I&quot;ve worked with many developers, but none quite like this. They consistently deliver fast, beautiful websites for both my business and my clients. Their work has significantly enhanced our design implementations.",
+      "As a small business owner in UI/UX design, I've worked with many developers, but none quite like this. They consistently deliver fast, beautiful websites for both my business and my clients. Their work has significantly enhanced our design implementations.",
   },
   {
     name: "Avia",
-    role: "CEO, Workflow Solutions",
+    role: "CEO, Ng Finance",
     content:
       "The CRM system they built for us has revolutionized our workflow. Not only did they understand our unique needs, but they also created a solution that saves time for both me and my employees. Their expertise in building practical, efficient systems is outstanding.",
   },
@@ -52,7 +52,7 @@ export default function Testimonials() {
               </CardHeader>
               <CardContent className="flex flex-grow items-center text-gray-700 dark:text-gray-300">
                 <p className="line-clamp-4">
-                  &apos;{testimonial.content}&apos;
+                  &quot;{testimonial.content}&quot;
                 </p>
               </CardContent>
             </Card>
