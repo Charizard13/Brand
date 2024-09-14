@@ -41,7 +41,6 @@ export default function About() {
           </ul>
         </div>
       </motion.div>
-
       <motion.div
         variants={fadeIn}
         className="relative w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px]h-[250px] lg:h-[500px]h-[250px] lg:h-[500px]"

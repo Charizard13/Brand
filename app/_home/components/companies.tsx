@@ -47,7 +47,7 @@ export default function Companies() {
     <>
       <motion.h2
         variants={fadeIn}
-        className="mb-8 font-bold text-3xl text-center text-gray-800 sm:text-4xl md:text-5xl dark:text-primary tracking-tighter"
+        className="mb-8 font-bold text-3xl text-center text-gray-800 text-primary sm:text-4xl md:text-5xl dark:text-primary tracking-tighter"
       >
         Companies We Worked With
       </motion.h2>

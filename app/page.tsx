@@ -1,12 +1,12 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Hero from "./_home/_components/hero";
-import Services from "./_home/_components/services";
-import About from "./_home/_components/about";
-import Companies from "./_home/_components/companies";
-import Testimonials from "./_home/_components/testimonials";
-import Contact from "./_home/_components/contact";
+import Hero from "./_home/components/hero";
+import Services from "./_home/components/services";
+import About from "./_home/components/about";
+import Companies from "./_home/components/companies";
+import Testimonials from "./_home/components/testimonials";
+import Contact from "./_home/components/contact";
 
 const bgClass = "bg-gray-100 dark:bg-gray-900";
 

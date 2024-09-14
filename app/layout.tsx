@@ -19,12 +19,12 @@ export const metadata = {
   title: "Full-Stack Solutions for Your Digital Success",
   description:
     "Transforming ideas into powerful, scalable applications. Your vision, our expertise.",
-  applicationName: "Elfo Software",
+  applicationName: "Elfo Software LLC",
   generator: "Next.js",
   keywords: ["Elfo Software", "Full-Stack Solutions", "Digital Success"],
   referrer: "origin-when-cross-origin",
-  creator: "Elfo Software",
-  publisher: "Elfo Software",
+  creator: "Elfo Software LLC",
+  publisher: "Elfo Software LLC",
   category: "Software Development",
   robots: "index, follow",
 } satisfies Metadata;
