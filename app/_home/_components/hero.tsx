@@ -28,13 +28,13 @@ export default function Hero() {
         <ContactButton alwaysVisible={true} />
         <Button
           variant="outline"
-          className="border-primary hover:bg-primary text-primary hover:text-black"
+          className="border-primary hover:bg-primary text-primary hover:text-white"
           onClick={() => handleButtonClickById("services")}
         >
           Learn More
         </Button>
       </motion.div>
-      <motion.div variants={fadeIn} className="mt-4">
+      <motion.div variants={fadeIn}>
         <Link
           href={socialLinks.linkedin}
           target="_blank"
