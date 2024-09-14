@@ -2,10 +2,28 @@ import { Button } from "@/components/ui/button";
 
 import Script from "next/script";
 import { useCallback } from "react";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
 import { elementsIds, fadeIn, socialLinks } from "@/utils/const";
 import Link from "next/link";
 import { motion } from "framer-motion";
+
+const contactButtons = [
+  {
+    href: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(socialLinks.email)}`,
+    icon: Mail,
+    label: "Email",
+  },
+  {
+    href: socialLinks.linkedin,
+    icon: Linkedin,
+    label: "LinkedIn",
+  },
+  {
+    href: `https://wa.me/${socialLinks.whatsapp}`,
+    icon: Phone,
+    label: "WhatsApp",
+  },
+] as const;
 
 export default function Contact() {
   const handleCalendlyClick = useCallback((e: React.MouseEvent) => {
@@ -37,17 +55,23 @@ export default function Contact() {
             rel="stylesheet"
           />
           <Button onClick={handleCalendlyClick} size="lg">
-            Schedule Time With Us
+            Schedule Meeting
           </Button>
-          <Link
-            href={socialLinks.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 text-primary hover:text-primary"
-          >
-            <Linkedin className="w-5 h-5" />
-            <span>Connect on LinkedIn</span>
-          </Link>
+          <div className="flex gap-4">
+            {contactButtons.map(({ href, icon: Icon, label }) => (
+              <Link
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+              >
+                <Button variant="outline" size="icon">
+                  <Icon className="w-5 h-5" />
+                </Button>
+              </Link>
+            ))}
+          </div>
         </div>
       </motion.div>
     </div>
