@@ -5,12 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
 import Link from "next/link";
 import { fadeIn, socialLinks } from "@/utils/const";
-import FloatingContactButton from "@/components/layout/contactButton";
+import ContactButton from "@/components/layout/contactButton";
 import { handleButtonClickById } from "@/utils/utils";
-import useContactButton from "@/app/_home/_hooks/useContactButton";
 
 export default function Hero() {
-  const { isVisible } = useContactButton();
   return (
     <div
       id="hero-section"
@@ -27,9 +25,7 @@ export default function Hero() {
         </h3>
       </motion.div>
       <motion.div variants={fadeIn} className="space-x-4">
-        <Button onClick={() => handleButtonClickById("contacts")}>
-          Contact Us
-        </Button>
+        <ContactButton alwaysVisible={true} />
         <Button
           variant="outline"
           className="border-primary hover:bg-primary text-primary hover:text-black"
@@ -49,7 +45,6 @@ export default function Hero() {
           <span>Connect on LinkedIn</span>
         </Link>
       </motion.div>
-      <FloatingContactButton isVisible={!isVisible} />
     </div>
   );
 }
