@@ -20,6 +20,8 @@ export const elementsIds = {
 } as const;
 
 export const socialLinks = {
+  email: "talpivena9@gmail.com",
+  whatsapp: "972542881820",
   linkedin: "https://www.linkedin.com/in/talpiven",
   linkedinImageUrl:
     "https://media.licdn.com/dms/image/v2/D4D03AQG_oW5W0-jAvw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726026808276?e=1731542400&v=beta&t=CFghPorIigsp88xMp2cTPmTm5ehs-eXScmUvQEtBMy0",

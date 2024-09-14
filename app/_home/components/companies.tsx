@@ -47,7 +47,7 @@ export default function Companies() {
     <>
       <motion.h2
         variants={fadeIn}
-        className="mb-8 font-bold text-3xl text-center text-gray-800 sm:text-4xl md:text-5xl dark:text-primary tracking-tighter"
+        className="mb-8 font-bold text-3xl text-center text-gray-800 text-primary sm:text-4xl md:text-5xl dark:text-primary tracking-tighter"
       >
         Companies We Worked With
       </motion.h2>
@@ -58,7 +58,7 @@ export default function Companies() {
             variants={fadeIn}
             className="flex justify-center items-center"
           >
-            <Card className="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg w-full h-[300px] transition-all duration-300 ease-in-out hover:scale-105">
+            <Card className="dark:bg-gray-800 shadow-md hover:shadow-lg w-full h-[250px] transition-all duration-300 ease-in-out hover:scale-105">
               <CardHeader className="flex-shrink-0">
                 <CardTitle>{company.name}</CardTitle>
                 <div className="flex flex-wrap gap-2 text-muted-foreground text-sm">

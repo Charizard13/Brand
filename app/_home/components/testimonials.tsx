@@ -41,7 +41,7 @@ export default function Testimonials() {
       <div className="gap-6 lg:gap-12 grid lg:grid-cols-3">
         {testimonials.map((testimonial, index) => (
           <motion.div key={index} variants={fadeIn}>
-            <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 h-[300px]">
+            <Card className="border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 h-[250px]">
               <CardHeader>
                 <CardTitle className="text-primary">
                   {testimonial.name}

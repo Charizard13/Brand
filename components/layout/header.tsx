@@ -5,8 +5,7 @@ import { Code, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { handleButtonClickById } from "@/utils/utils";
-import useContactButton from "@/app/_home/_hooks/useContactButton";
+import ContactButton from "./contactButton";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -19,15 +18,11 @@ const links = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { isVisible } = useContactButton();
-
-  const handleClick = () => handleButtonClickById("contacts");
-
   return (
     <header className="top-0 right-0 left-0 z-50 fixed flex justify-between items-center gap-2 dark:border-gray-800 bg-background px-4 lg:px-6 border-b h-14">
       <Link className="flex flex-1 items-center" href="#">
         <Code className="w-6 h-6 text-primary" />
-        <span className="ml-2 font-bold font-mono text-primary">
+        <span className="ml-2 font-bold font-mono text-center text-primary">
           Elfo Software
         </span>
       </Link>
@@ -43,7 +38,7 @@ export default function Header() {
         ))}
       </nav>
       <div className="md:flex flex-1 justify-end hidden">
-        {!isVisible && <Button onClick={handleClick}>Contact Us</Button>}
+        <ContactButton />
       </div>
       <Button
         className="md:hidden ml-auto"
