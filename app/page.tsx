@@ -8,7 +8,7 @@ import Companies from "./_home/_components/companies";
 import Testimonials from "./_home/_components/testimonials";
 import Contact from "./_home/_components/contact";
 
-const bgClass = "bg-white dark:bg-gray-900";
+const bgClass = "bg-gray-100 dark:bg-gray-900";
 
 const sections = [
   { id: "hero", component: Hero, bgClass: "" },
@@ -41,19 +41,19 @@ const stagger: Variants = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 bg-white dark:bg-gray-900 min-h-screen font-mono text-gray-900 dark:text-gray-100">
+    <div className="flex flex-col font-mono">
       {sections.map(({ id, component: Component, bgClass }, index) => (
         <section
           key={id || index}
           id={id}
-          className={`py-12 md:py-24 lg:py-32 xl:py-48 w-full ${bgClass}`}
+          className={`py-12 md:py-24 lg:py-32 xl:py-48 min-h-screen flex items-center ${bgClass}`}
         >
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={stagger}
-            className="px-4 md:px-6 container"
+            className="container"
           >
             <Component />
           </motion.div>
