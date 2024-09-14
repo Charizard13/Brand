@@ -21,16 +21,8 @@ const services = [
       "Responsive and interactive web applications built with the latest technologies and best practices.",
   },
 ] as const;
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { elementsIds, fadeIn } from "../../../utils/const";
-import { Button } from "@/components/ui/button";
 
 export default function Services() {
   return (

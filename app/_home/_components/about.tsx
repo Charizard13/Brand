@@ -3,64 +3,38 @@ import { fadeIn, socialLinks } from "../../../utils/const";
 import Image from "next/image";
 import { Check } from "lucide-react";
 
-const companyInfo = [
-  "Founded to address the growing need for innovative software solutions",
-  "Our vision is to empower businesses with cutting-edge technology and exceptional service",
-  "Specializing in tailored full-stack development for businesses of all sizes",
-] as const;
-
-const founderInfo = [
-  "Extensive professional experience in diverse development environments",
-  "Expertise in multiple programming languages and frameworks",
-  "Proven track record of successful project deliveries for various clients",
+const founderExpertise = [
+  "Full-stack development across diverse environments",
+  "Mastery of multiple programming languages and frameworks",
+  "Proven track record of successful project deliveries",
 ] as const;
 
 export default function About() {
   return (
-    <div className="items-center gap-6 lg:gap-12 grid lg:grid-cols-2">
-      <motion.div variants={fadeIn} className="space-y-6">
-        <h2 className="font-bold text-3xl text-primary">About Us</h2>
-        <p className="text-black text-lg dark:text-white text-opacity-80 dark:text-opacity-90">
-          Elfo Software Ltd. was established to bridge the gap between
-          innovative ideas and their digital realization. Our mission is to
-          provide top-tier software solutions that address the unique challenges
-          faced by modern businesses.
+    <div className="flex flex-col items-center gap-6 lg:gap-12 lg:grid lg:grid-cols-2">
+      <motion.div
+        variants={fadeIn}
+        className="space-y-6 w-full text-center lg:text-left"
+      >
+        <h2 className="font-bold text-2xl text-primary sm:text-3xl">
+          About Us
+        </h2>
+        <p className="text-base text-black sm:text-lg dark:text-white text-opacity-80 dark:text-opacity-90">
+          Elfo Software LLC bridges innovative ideas with digital solutions. We
+          deliver top-tier, tailored full-stack development to empower
+          businesses of all sizes with cutting-edge technology and exceptional
+          service.
         </p>
-
-        <div className="mt-8">
-          <h3 className="mb-4 font-semibold text-primary text-xl">
-            Company Overview
-          </h3>
-          <ul className="gap-2 grid">
-            {companyInfo.map((item) => (
+        <div className="flex flex-col gap-3 sm:gap-4">
+          <h3 className="text-primary">Founder Expertise</h3>
+          <ul className="gap-2 grid m-0 p-0">
+            {founderExpertise.map((item) => (
               <motion.li
                 key={item}
                 variants={fadeIn}
-                className="flex items-center text-black text-sm dark:text-white text-opacity-70 dark:text-opacity-80"
+                className="flex justify-center lg:justify-start items-center md:gap-2 text-black text-xs sm:text-sm dark:text-white text-opacity-70 dark:text-opacity-80"
               >
-                <Check className="mr-2 w-4 h-4 text-primary" />
-                {item}
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mt-8">
-          <h3 className="mb-4 font-semibold text-primary text-xl">
-            About the Founder
-          </h3>
-          <p className="mb-2 text-black text-sm dark:text-white text-opacity-70 dark:text-opacity-80">
-            As the founder and owner of Elfo Software Ltd., I bring a wealth of
-            experience to every project:
-          </p>
-          <ul className="gap-2 grid">
-            {founderInfo.map((item) => (
-              <motion.li
-                key={item}
-                variants={fadeIn}
-                className="flex items-center text-black text-sm dark:text-white text-opacity-70 dark:text-opacity-80"
-              >
-                <Check className="mr-2 w-4 h-4 text-primary" />
+                <Check className="sm:block hidden w-3 sm:w-4 h-3 sm:h-4 text-primary" />
                 {item}
               </motion.li>
             ))}
@@ -70,12 +44,14 @@ export default function About() {
 
       <motion.div
         variants={fadeIn}
-        className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px]"
+        className="relative w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px]h-[250px] lg:h-[500px]h-[250px] lg:h-[500px]"
       >
         <Image
           src={socialLinks.linkedinImageUrl}
-          alt="Tal Piven, Founder of Elfo Software Ltd."
+          alt="Tal Piven, Founder of Elfo Software LLC"
           fill
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="rounded-xl w-full h-full object-cover"
         />
       </motion.div>
