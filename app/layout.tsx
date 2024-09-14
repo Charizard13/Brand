@@ -27,6 +27,15 @@ export const metadata = {
   publisher: "Elfo Software LLC",
   category: "Software Development",
   robots: "index, follow",
+  openGraph: {
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 } satisfies Metadata;
 
 export default function RootLayout({
