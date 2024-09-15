@@ -44,7 +44,7 @@ export default function Home() {
     <div className="flex flex-col font-mono">
       {sections.map(({ id, component: Component, bgClass }, index) => (
         <section
-          key={id || index}
+          key={id}
           id={id}
           className={`py-12 md:py-24 lg:py-32 xl:py-48 min-h-screen flex items-center ${bgClass}`}
         >

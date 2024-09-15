@@ -48,7 +48,7 @@ export default function Services() {
               }}
               className="h-full"
             >
-              <Card className="dark:bg-gray-800 shadow-md hover:shadow-lg w-full transition-all duration-300 ease-in-out hover:scale-105 h-[250px]">
+              <Card className="dark:bg-gray-800 shadow-md hover:shadow-lg w-full transition-all duration-300 ease-in-out hover:scale-105 h-full">
                 <CardHeader>
                   <service.icon className="mb-2 w-8 h-8 text-primary" />
                   <CardTitle className="text-primary">
