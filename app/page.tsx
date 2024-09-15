@@ -42,7 +42,7 @@ const stagger: Variants = {
 export default function Home() {
   return (
     <div className="flex flex-col font-mono">
-      {sections.map(({ id, component: Component, bgClass }, index) => (
+      {sections.map(({ id, component: Component, bgClass }) => (
         <section
           key={id}
           id={id}
