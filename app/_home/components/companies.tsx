@@ -2,6 +2,13 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../../utils/const";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const companies = [
   {
@@ -47,32 +54,51 @@ export default function Companies() {
     <>
       <motion.h2
         variants={fadeIn}
-        className="mb-8 font-bold text-3xl text-center text-gray-800 text-primary sm:text-4xl md:text-5xl dark:text-primary tracking-tighter"
+        className="mb-8 text-center text-primary sm:text-4xl md:text-5xl dark:text-primary tracking-tighter"
       >
         Companies We Worked With
       </motion.h2>
-      <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {companies.map((company) => (
-          <motion.div
-            key={company.name}
-            variants={fadeIn}
-            className="flex justify-center items-center"
-          >
-            <Card className="dark:bg-gray-800 shadow-md hover:shadow-lg w-full h-[250px] transition-all duration-300 ease-in-out hover:scale-105">
-              <CardHeader className="flex-shrink-0">
-                <CardTitle>{company.name}</CardTitle>
-                <div className="flex flex-wrap gap-2 text-muted-foreground text-sm">
-                  {company.categories.map((category) => (
-                    <Badge key={category}>{category}</Badge>
-                  ))}
-                </div>
-              </CardHeader>
-              <CardContent className="flex-grow overflow-hidden">
-                <p className="line-clamp-4">{company.description}</p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+      <div className="relative mx-auto px-2 sm:px-4 lg:px-6 w-full max-w-6xl">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="px-4 sm:px-8 w-full" // Reduced padding for small screens
+        >
+          <CarouselContent className="-ml-2 sm:-ml-4">
+            {" "}
+            {/* Reduced negative margin for small screens */}
+            {companies.map((company) => (
+              <CarouselItem
+                key={company.name}
+                className="pl-2 sm:pl-4 md:basis-1/2 lg:basis-1/3" // Reduced left padding for small screens
+              >
+                <motion.div variants={fadeIn} className="p-2 sm:p-4">
+                  {" "}
+                  {/* Reduced padding for small screens */}
+                  <Card className="dark:bg-gray-800 shadow-md hover:shadow-lg h-[250px] transition-all duration-300 ease-in-out hover:scale-105">
+                    <CardHeader className="flex-shrink-0">
+                      <CardTitle>{company.name}</CardTitle>
+                      <div className="flex flex-wrap gap-2 text-muted-foreground text-sm">
+                        {company.categories.map((category) => (
+                          <Badge key={category}>{category}</Badge>
+                        ))}
+                      </div>
+                    </CardHeader>
+                    <CardContent className="flex-grow overflow-hidden">
+                      <p className="line-clamp-4">{company.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="top-1/2 right-0 left-0 absolute flex justify-between -translate-y-1/2">
+            <CarouselPrevious className="relative -left-4 transition-transform hover:-translate-x-1" />
+            <CarouselNext className="relative -right-4 transition-transform hover:translate-x-1" />
+          </div>
+        </Carousel>
       </div>
     </>
   );
