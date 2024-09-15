@@ -64,19 +64,15 @@ export default function Companies() {
             align: "start",
             loop: true,
           }}
-          className="px-4 sm:px-8 w-full" // Reduced padding for small screens
+          className="px-4 sm:px-8 w-full"
         >
           <CarouselContent className="-ml-2 sm:-ml-4">
-            {" "}
-            {/* Reduced negative margin for small screens */}
             {companies.map((company) => (
               <CarouselItem
                 key={company.name}
-                className="pl-2 sm:pl-4 md:basis-1/2 lg:basis-1/3" // Reduced left padding for small screens
+                className="pl-2 sm:pl-4 md:basis-1/2 lg:basis-1/3"
               >
                 <motion.div variants={fadeIn} className="p-2 sm:p-4">
-                  {" "}
-                  {/* Reduced padding for small screens */}
                   <Card className="dark:bg-gray-800 shadow-md hover:shadow-lg h-[250px] transition-all duration-300 ease-in-out hover:scale-105">
                     <CardHeader className="flex-shrink-0">
                       <CardTitle>{company.name}</CardTitle>
