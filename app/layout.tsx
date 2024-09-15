@@ -22,20 +22,9 @@ export const metadata = {
   applicationName: "Elfo Software LLC",
   generator: "Next.js",
   keywords: ["Elfo Software", "Full-Stack Solutions", "Digital Success"],
-  referrer: "origin-when-cross-origin",
   creator: "Elfo Software LLC",
   publisher: "Elfo Software LLC",
   category: "Software Development",
-  robots: "index, follow",
-  openGraph: {
-    images: [
-      {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
 } satisfies Metadata;
 
 export default function RootLayout({
