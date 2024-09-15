@@ -7,6 +7,13 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const testimonials = [
   {
@@ -38,26 +45,45 @@ export default function Testimonials() {
       >
         What Clients Say
       </motion.h2>
-      <div className="gap-6 lg:gap-12 grid lg:grid-cols-3">
-        {testimonials.map((testimonial, index) => (
-          <motion.div key={index} variants={fadeIn}>
-            <Card className="border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 h-[250px]">
-              <CardHeader>
-                <CardTitle className="text-primary">
-                  {testimonial.name}
-                </CardTitle>
-                <CardDescription className="text-gray-600 dark:text-gray-400">
-                  {testimonial.role}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-grow items-center text-gray-700 dark:text-gray-300">
-                <p className="line-clamp-4">
-                  &quot;{testimonial.content}&quot;
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+      <div className="relative mx-auto px-2 sm:px-4 lg:px-6 w-full max-w-6xl">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="px-4 sm:px-8 w-full"
+        >
+          <CarouselContent className="-ml-2 sm:-ml-4">
+            {testimonials.map((testimonial) => (
+              <CarouselItem
+                key={testimonial.name}
+                className="pl-2 sm:pl-4 md:basis-1/2 lg:basis-1/3"
+              >
+                <motion.div variants={fadeIn} className="p-2 sm:p-4">
+                  <Card className="dark:bg-gray-800 shadow-md hover:shadow-lg h-[250px] transition-all duration-300 ease-in-out hover:scale-105">
+                    <CardHeader className="flex-shrink-0">
+                      <CardTitle className="text-primary">
+                        {testimonial.name}
+                      </CardTitle>
+                      <CardDescription className="text-gray-600 dark:text-gray-400">
+                        {testimonial.role}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow text-gray-700 dark:text-gray-300 overflow-hidden">
+                      <p className="line-clamp-4">
+                        &quot;{testimonial.content}&quot;
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="top-1/2 right-0 left-0 absolute flex justify-between -translate-y-1/2">
+            <CarouselPrevious className="relative -left-4 transition-transform hover:-translate-x-1" />
+            <CarouselNext className="relative -right-4 transition-transform hover:translate-x-1" />
+          </div>
+        </Carousel>
       </div>
     </>
   );

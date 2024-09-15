@@ -2,8 +2,8 @@ import Link from "next/link";
 import { ThemeSwitcher } from "../theme-switcher";
 
 const links = [
-  { href: "#", text: "Terms of Service" },
-  { href: "#", text: "Privacy" },
+  { href: "#", text: "Terms of Service", id: "terms-of-service" },
+  { href: "#", text: "Privacy", id: "privacy" },
 ] as const;
 
 export default function Footer() {
@@ -16,7 +16,7 @@ export default function Footer() {
       <nav className="flex gap-4 sm:gap-6 sm:ml-auto">
         {links.map((link) => (
           <Link
-            key={link.href}
+            key={link.id}
             href={link.href}
             className={`${footerTextClass} hover:text-primary underline-offset-4 hover:underline`}
           >
