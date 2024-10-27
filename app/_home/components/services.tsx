@@ -1,28 +1,37 @@
 import { motion } from "framer-motion";
 import { Code, Smartphone, Globe } from "lucide-react";
-
 const services = [
   {
     icon: Code,
-    title: "Full-Stack Development",
+    title: "Frontend Development",
     description:
-      "End-to-end solutions from database design to user interface, ensuring seamless integration and optimal performance.",
+      "Front-end development for responsive websites, leveraging React, Next.js, and Tailwind CSS.",
+    framework: ["React", "Next.js", "Tailwind CSS"],
+  },
+  {
+    icon: Globe,
+    title: "Backend Development",
+    description:
+      "Backend development with easy to use frameworks like Deno, Supabase, and PostgreSQL.",
+    framework: ["Deno", "Supabase", "PostgreSQL"],
   },
   {
     icon: Smartphone,
     title: "Mobile App Development",
     description:
       "Cross-platform mobile applications that provide a native experience on both iOS and Android devices.",
-  },
-  {
-    icon: Globe,
-    title: "Web Application Development",
-    description:
-      "Responsive and interactive web applications built with the latest technologies and best practices.",
+    framework: ["React Native", "Expo"],
   },
 ] as const;
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { elementsIds, fadeIn } from "@/utils/const";
+import { Badge } from "@/components/ui/badge";
 
 export default function Services() {
   return (
@@ -60,6 +69,16 @@ export default function Services() {
                     {service.description}
                   </p>
                 </CardContent>
+                <CardFooter className="flex flex-col gap-2">
+                  <h3 className="font-medium text-sm">Our Expertise:</h3>
+                  <div className="flex flex-wrap gap-4">
+                    {service.framework.map((framework) => (
+                      <Badge key={framework} variant="secondary">
+                        {framework}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardFooter>
               </Card>
             </motion.div>
           </motion.div>
