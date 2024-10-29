@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { ThemeSwitcher } from "../theme-switcher";
+import { FaGithub } from "react-icons/fa";
+import { socialLinks } from "@/utils/const";
 
 const links = [
   { href: "#", text: "Terms of Service", id: "terms-of-service" },
@@ -13,7 +15,7 @@ export default function Footer() {
       <p className={footerTextClass}>
         © 2024 Elfo Software LLC. All rights reserved.
       </p>
-      <nav className="flex gap-4 sm:gap-6 sm:ml-auto">
+      <nav className="flex items-center gap-4 sm:gap-6 sm:ml-auto">
         {links.map((link) => (
           <Link
             key={link.id}
@@ -23,6 +25,14 @@ export default function Footer() {
             {link.text}
           </Link>
         ))}
+        <Link
+          href={socialLinks.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${footerTextClass} hover:text-primary`}
+        >
+          <FaGithub className="w-4 h-4" />
+        </Link>
       </nav>
       <ThemeSwitcher />
     </footer>
