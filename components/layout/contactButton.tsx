@@ -4,6 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { handleButtonClickById } from "@/utils/utils";
 import { useState, useEffect } from "react";
+import { FaGithub } from "react-icons/fa";
+import { socialLinks } from "@/utils/const";
+import { ICON_SIZE, ThemeSwitcher } from "../theme-switcher";
+import Link from "next/link";
 
 type ContactButtonProps = {
   alwaysVisible?: boolean;
@@ -29,23 +33,40 @@ const ContactButton = ({ alwaysVisible = false }: ContactButtonProps) => {
 
   const showRegularButton = alwaysVisible || !isVisible;
   const showMobileButton = !isVisible;
+
+  if (showRegularButton) {
+    return <Button onClick={handleClick}>Contact Us</Button>;
+  }
+
+  if (showMobileButton) {
+    return (
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.3 }}
+          className="block right-4 bottom-4 z-50 fixed md:hidden"
+        >
+          <Button onClick={handleClick}>Contact Us</Button>
+        </motion.div>
+      </AnimatePresence>
+    );
+  }
+
   return (
-    <>
-      {showRegularButton && <Button onClick={handleClick}>Contact Us</Button>}
-      {showMobileButton && (
-        <AnimatePresence>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.3 }}
-            className="block right-4 bottom-4 z-50 fixed md:hidden"
-          >
-            <Button onClick={handleClick}>Contact Us</Button>
-          </motion.div>
-        </AnimatePresence>
-      )}
-    </>
+    <div className="flex flex-1 justify-end items-center">
+      <Button variant="ghost" size={"sm"} asChild>
+        <Link
+          href={socialLinks.github}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub size={ICON_SIZE} />
+        </Link>
+      </Button>
+      <ThemeSwitcher />
+    </div>
   );
 };
 

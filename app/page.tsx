@@ -3,9 +3,6 @@
 import { motion, Variants } from "framer-motion";
 import Hero from "./_home/components/hero";
 import Services from "./_home/components/services";
-import About from "./_home/components/about";
-import Companies from "./_home/components/companies";
-import Testimonials from "./_home/components/testimonials";
 import Contact from "./_home/components/contact";
 
 const bgClass = "bg-gray-100 dark:bg-gray-900";
@@ -17,17 +14,10 @@ const sections = [
     component: Services,
     bgClass,
   },
-  { id: "about", component: About, bgClass: "" },
-  {
-    id: "companies",
-    component: Companies,
-    bgClass,
-  },
-  { id: "testimonials", component: Testimonials, bgClass: "" },
   {
     id: "contact",
     component: Contact,
-    bgClass,
+    bgClass: "",
   },
 ] as const;
 
@@ -46,14 +36,14 @@ export default function Home() {
         <section
           key={id}
           id={id}
-          className={`py-12 md:py-24 lg:py-32 xl:py-48 min-h-screen flex items-center ${bgClass}`}
+          className={`py-12 md:py-24 lg:py-32 xl:py-48 min-h-screen flex items-center ${bgClass} `}
         >
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={stagger}
-            className="container"
+            className="max-w-screen-xl container"
           >
             <Component />
           </motion.div>

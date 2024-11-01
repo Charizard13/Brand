@@ -8,10 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import ContactButton from "./contactButton";
 
 const links = [
-  { href: "#services", label: "Services" },
   { href: "#about", label: "About" },
-  { href: "#companies", label: "Companies" },
-  { href: "#testimonials", label: "Testimonials" },
+  { href: "#services", label: "Services" },
   { href: "#contact", label: "Contact" },
 ] as const;
 
@@ -20,25 +18,27 @@ export default function Header() {
 
   return (
     <header className="top-0 right-0 left-0 z-50 fixed flex justify-between items-center gap-2 dark:border-gray-800 bg-background px-4 lg:px-6 border-b h-14">
-      <Link className="flex flex-1 items-center" href="#">
-        <Code className="w-6 h-6 text-primary" />
-        <span className="ml-2 font-bold font-mono text-center text-primary">
-          Elfo Software
-        </span>
-      </Link>
-      <nav className="md:flex flex-grow justify-center items-center gap-4 sm:gap-6 hidden">
-        {links.map(({ href, label }) => (
-          <Link
-            key={`${href}${label}`}
-            href={href}
-            className="font-medium text-sm hover:text-primary"
-          >
-            {label}
-          </Link>
-        ))}
-      </nav>
-      <div className="md:flex flex-1 justify-end hidden">
-        <ContactButton />
+      <div className="flex mx-auto w-full max-w-screen-2xl">
+        <Link className="flex flex-1 items-center" href="#">
+          <Code className="w-6 h-6 text-primary" />
+          <span className="ml-2 font-bold font-mono text-center text-primary">
+            Elfo Software
+          </span>
+        </Link>
+        <nav className="md:flex flex-grow justify-center items-center gap-4 sm:gap-6 hidden text-center">
+          {links.map(({ href, label }) => (
+            <Link
+              key={`${href}${label}`}
+              href={href}
+              className="w-24 font-medium text-sm hover:text-primary"
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+        <div className="md:flex flex-1 justify-end hidden">
+          <ContactButton />
+        </div>
       </div>
       <Button
         className="md:hidden ml-auto"
