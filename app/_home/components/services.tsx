@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
 import { RiNextjsLine, RiSupabaseFill } from "react-icons/ri";
 import { TbBrandDeno, TbBrandReactNative } from "react-icons/tb";
-import { BiLogoPostgresql, BiLogoTailwindCss } from "react-icons/bi";
 import { SiExpo } from "react-icons/si";
 
 const services = [

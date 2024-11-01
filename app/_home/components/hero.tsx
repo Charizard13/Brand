@@ -2,9 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Linkedin } from "lucide-react";
-import Link from "next/link";
-import { fadeIn, socialLinks } from "@/utils/const";
+import { fadeIn } from "@/utils/const";
 import ContactButton from "@/components/layout/contactButton";
 import { handleButtonClickById } from "@/utils/utils";
 
