@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Code, Smartphone, Globe } from "lucide-react";
 import { FaReact } from "react-icons/fa";
 import { RiNextjsLine, RiSupabaseFill } from "react-icons/ri";
 import { TbBrandDeno, TbBrandReactNative } from "react-icons/tb";
@@ -8,35 +7,59 @@ import { SiExpo } from "react-icons/si";
 
 const services = [
   {
-    icon: Code,
     title: "Frontend Development",
     description:
-      "Front-end development for responsive websites, leveraging React, Next.js, and Tailwind CSS.",
+      "Modern, responsive web interfaces with industry-leading technologies.",
+    icon: "🎨",
+    css: "w-full lg:flex-1",
     frameworks: [
-      { Icon: FaReact, url: "https://react.dev" },
-      { Icon: RiNextjsLine, url: "https://nextjs.org" },
-      { Icon: BiLogoTailwindCss, url: "https://tailwindcss.com" },
+      {
+        icon: FaReact,
+        label: "React",
+        description: "UI components & state management",
+      },
+      {
+        icon: RiNextjsLine,
+        label: "Next.js",
+        description: "SSR, routing & API integration",
+      },
     ],
   },
   {
-    icon: Globe,
-    title: "Backend Development",
+    title: "Backend Solutions",
     description:
-      "Backend development with easy to use tools and technologies like Deno, Supabase, and PostgreSQL.",
+      "Scalable infrastructure with modern cloud-native technologies.",
+    icon: "⚡",
+    css: "w-full lg:flex-1",
     frameworks: [
-      { Icon: TbBrandDeno, url: "https://deno.land" },
-      { Icon: RiSupabaseFill, url: "https://supabase.com" },
-      { Icon: BiLogoPostgresql, url: "https://www.postgresql.org" },
+      {
+        icon: RiSupabaseFill,
+        label: "Supabase",
+        description: "Auth, DB & realtime features",
+      },
+      {
+        icon: TbBrandDeno,
+        label: "Deno",
+        description: "Secure TypeScript runtime",
+      },
     ],
   },
   {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description:
-      "Cross-platform mobile applications that provide a native experience on both iOS and Android devices.",
+    title: "Mobile Development",
+    description: "Cross-platform native apps for iOS and Android.",
+    icon: "📱",
+    css: "w-full",
     frameworks: [
-      { Icon: TbBrandReactNative, url: "https://reactnative.dev" },
-      { Icon: SiExpo, url: "https://expo.dev" },
+      {
+        icon: SiExpo,
+        label: "Expo",
+        description: "Fast mobile deployment",
+      },
+      {
+        icon: TbBrandReactNative,
+        label: "React Native",
+        description: "Native UI & performance",
+      },
     ],
   },
 ] as const;
@@ -44,75 +67,62 @@ const services = [
 import {
   Card,
   CardContent,
-  CardFooter,
+  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { elementsIds, fadeIn } from "@/utils/const";
-import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
 
 export default function Services() {
   return (
-    <>
+    <section className="py-16">
       <motion.h2
         variants={fadeIn}
         id={elementsIds.services}
-        className="mb-8 font-bold text-3xl text-center text-primary sm:text-4xl md:text-5xl tracking-tighter"
+        className="mb-12 font-bold text-3xl text-center text-primary sm:text-4xl lg:text-5xl tracking-tighter"
       >
-        Our Services
+        Our Technology Stack
       </motion.h2>
-      <div className="gap-6 lg:gap-12 grid lg:grid-cols-3">
+
+      <div className="flex flex-wrap gap-3">
         {services.map((service) => (
           <motion.div
             key={service.title}
             variants={fadeIn}
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            className={service.css}
           >
-            <motion.div
-              whileHover={{
-                boxShadow: "0 0 8px rgb(var(--primary-rgb) / 0.5)",
-              }}
-              className="h-full"
-            >
-              <Card className="dark:bg-gray-800 shadow-md hover:shadow-lg w-full transition-all duration-300 ease-in-out hover:scale-105 h-full">
-                <CardHeader>
-                  <service.icon className="mb-2 w-8 h-8 text-primary" />
+            <Card className="border-primary/10 dark:bg-gray-800/50 backdrop-blur-sm h-full">
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <span>{service.icon}</span>
                   <CardTitle className="text-primary">
                     {service.title}
                   </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {service.description}
-                  </p>
-                </CardContent>
-                <CardFooter className="flex flex-col gap-4">
-                  <div className="flex flex-wrap justify-end items-center gap-3 w-full">
-                    {service.frameworks.map(({ Icon, url }) => (
-                      <Link
-                        key={url}
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:opacity-80 transition-opacity hover:scale-105"
-                      >
-                        <Badge
-                          variant="secondary"
-                          className="flex items-center hover:bg-opacity-90 p-2 transition-colors"
-                        >
-                          <Icon className="w-5 h-5" />
-                        </Badge>
-                      </Link>
-                    ))}
-                  </div>
-                </CardFooter>
-              </Card>
-            </motion.div>
+                </div>
+                <CardDescription>{service.description}</CardDescription>
+              </CardHeader>
+              <CardContent className="flex lg:flex-col lg:gap-4">
+                {service.frameworks.map(
+                  ({ icon: Icon, label, description }) => (
+                    <div
+                      key={label}
+                      className={"flex items-center gap-2 w-full"}
+                    >
+                      <Icon className="w-4 lg:w-8 h-4 lg:h-8" />
+                      <div>
+                        <h5>{label}</h5>
+                        <div className="lg:block hidden text-muted-foreground">
+                          {description}
+                        </div>
+                      </div>
+                    </div>
+                  )
+                )}
+              </CardContent>
+            </Card>
           </motion.div>
         ))}
       </div>
-    </>
+    </section>
   );
 }

@@ -1,7 +1,4 @@
 import Link from "next/link";
-import { ThemeSwitcher } from "../theme-switcher";
-import { FaGithub } from "react-icons/fa";
-import { socialLinks } from "@/utils/const";
 
 const links = [
   { href: "#", text: "Terms of Service", id: "terms-of-service" },
@@ -25,16 +22,7 @@ export default function Footer() {
             {link.text}
           </Link>
         ))}
-        <Link
-          href={socialLinks.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${footerTextClass} hover:text-primary`}
-        >
-          <FaGithub className="w-4 h-4" />
-        </Link>
       </nav>
-      <ThemeSwitcher />
     </footer>
   );
 }

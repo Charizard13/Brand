@@ -2,10 +2,11 @@ import { Button } from "@/components/ui/button";
 
 import Script from "next/script";
 import { useCallback } from "react";
-import { Linkedin, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { elementsIds, fadeIn, socialLinks } from "@/utils/const";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { FaLinkedin } from "react-icons/fa";
 
 const contactButtons = [
   {
@@ -15,7 +16,7 @@ const contactButtons = [
   },
   {
     href: socialLinks.linkedin,
-    icon: Linkedin,
+    icon: FaLinkedin,
     label: "LinkedIn",
   },
   {
