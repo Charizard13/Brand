@@ -35,7 +35,11 @@ const ContactButton = ({ alwaysVisible = false }: ContactButtonProps) => {
   const showMobileButton = !isVisible;
 
   if (showRegularButton) {
-    return <Button onClick={handleClick}>Contact Us</Button>;
+    return (
+      <Button onClick={handleClick} size="lg">
+        Contact Us
+      </Button>
+    );
   }
 
   if (showMobileButton) {
@@ -48,7 +52,9 @@ const ContactButton = ({ alwaysVisible = false }: ContactButtonProps) => {
           transition={{ duration: 0.3 }}
           className="block right-4 bottom-4 z-50 fixed md:hidden"
         >
-          <Button onClick={handleClick}>Contact Us</Button>
+          <Button onClick={handleClick} size="lg">
+            Contact Us
+          </Button>
         </motion.div>
       </AnimatePresence>
     );

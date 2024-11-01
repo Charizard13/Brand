@@ -94,7 +94,7 @@ export default function Services() {
               <CardHeader>
                 <div className="flex items-center gap-2">
                   <span>{service.icon}</span>
-                  <CardTitle className="text-primary">
+                  <CardTitle className="text-primary text-xl lg:text-2xl">
                     {service.title}
                   </CardTitle>
                 </div>

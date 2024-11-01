@@ -34,7 +34,7 @@ export default function Hero() {
   return (
     <div
       id="hero-section"
-      className="flex flex-col items-center space-y-6 text-center"
+      className="flex flex-col items-center space-y-12 text-center"
     >
       <motion.div variants={fadeIn}>
         <h1 className="font-bold text-3xl lg:text-6xl/none tracking-tighter">
@@ -51,6 +51,7 @@ export default function Hero() {
         <ContactButton alwaysVisible={true} />
         <Button
           variant="outline"
+          size="lg"
           className="border-primary hover:bg-primary text-primary hover:text-white"
           onClick={() => handleButtonClickById("services")}
         >
