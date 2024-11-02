@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import ContactButton from "./contactButton";
+import { Separator } from "@/components/ui/separator";
 
 const links = [
   { href: "#about", label: "About" },
@@ -68,14 +69,17 @@ export default function Header() {
             />
             <div className="relative z-10 flex flex-col items-end">
               {links.map(({ href, label }) => (
-                <Link
-                  key={`${href}${label}`}
-                  href={href}
-                  className="block text-right py-2 font-medium text-foreground text-sm hover:text-primary transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {label}
-                </Link>
+                <>
+                  <Link
+                    key={`${href}${label}`}
+                    href={href}
+                    className="block text-right py-2 font-medium text-foreground text-sm hover:text-primary transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                  <Separator className="w-full" />
+                </>
               ))}
             </div>
           </motion.div>
