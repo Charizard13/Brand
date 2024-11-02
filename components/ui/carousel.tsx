@@ -1,5 +1,4 @@
 "use client";
-/* eslint-disable */
 
 import * as React from "react";
 import useEmblaCarousel, {
