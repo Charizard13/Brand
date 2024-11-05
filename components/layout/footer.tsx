@@ -1,10 +1,3 @@
-import Link from "next/link";
-
-const links = [
-  { href: "#", text: "Terms of Service", id: "terms-of-service" },
-  { href: "#", text: "Privacy", id: "privacy" },
-] as const;
-
 export default function Footer() {
   const footerTextClass = "font-mono text-gray-400 text-xs w-full";
   return (
