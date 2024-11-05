@@ -10,7 +10,7 @@ const services = [
     description:
       "Modern, responsive web interfaces with industry-leading technologies.",
     icon: "🎨",
-    css: "w-full lg:flex-1",
+    css: "w-full lg:w-[60%]",
     frameworks: [
       {
         icon: FaReact,
@@ -29,7 +29,7 @@ const services = [
     description:
       "Scalable infrastructure with modern cloud-native technologies.",
     icon: "⚡",
-    css: "w-full lg:flex-1",
+    css: "w-full lg:w-[40%] transition-all duration-300",
     frameworks: [
       {
         icon: RiSupabaseFill,
@@ -47,7 +47,7 @@ const services = [
     title: "Mobile Development",
     description: "Cross-platform native apps for iOS and Android.",
     icon: "📱",
-    css: "w-full",
+    css: "w-full lg:my-4",
     frameworks: [
       {
         icon: SiExpo,
@@ -83,14 +83,14 @@ export default function Services() {
         Our Technology Stack
       </motion.h2>
 
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap">
         {services.map((service) => (
           <motion.div
             key={service.title}
             variants={fadeIn}
             className={service.css}
           >
-            <Card className="border-primary/10 dark:bg-gray-800/50 backdrop-blur-sm h-full">
+            <Card className="border-primary/10 dark:bg-gray-800/50 backdrop-blur-sm mx-2 h-full">
               <CardHeader>
                 <div className="flex items-center gap-2">
                   <span>{service.icon}</span>
