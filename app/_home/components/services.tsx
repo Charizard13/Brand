@@ -29,7 +29,7 @@ const services = [
     description:
       "Scalable infrastructure with modern cloud-native technologies.",
     icon: "⚡",
-    css: "w-full lg:w-[40%] transition-all duration-300",
+    css: "w-full lg:w-[40%] mt-4 lg:mt-0",
     frameworks: [
       {
         icon: RiSupabaseFill,
@@ -47,7 +47,7 @@ const services = [
     title: "Mobile Development",
     description: "Cross-platform native apps for iOS and Android.",
     icon: "📱",
-    css: "w-full lg:my-4",
+    css: "w-full my-4",
     frameworks: [
       {
         icon: SiExpo,
