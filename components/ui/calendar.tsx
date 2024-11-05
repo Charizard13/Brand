@@ -54,7 +54,9 @@ function Calendar({
         ...classNames,
       }}
       components={{
+        // @ts-ignore
         IconLeft: ({ ...props }) => <ChevronLeft className="w-4 h-4" />,
+        // @ts-ignore
         IconRight: ({ ...props }) => <ChevronRight className="w-4 h-4" />,
       }}
       {...props}
