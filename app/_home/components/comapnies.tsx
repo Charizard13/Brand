@@ -6,31 +6,37 @@ const companiesIveWorkedWith = [
     name: "Skiff",
     logo: "/brands/skiff.svg",
     logoDark: "/brands/skiff-dark.svg",
+    className: "mt-1",
   },
   {
     name: "Nextnet",
     logo: "/brands/next-net.svg",
     logoDark: "/brands/next-net-dark.svg",
+    className: "mt-2",
   },
   {
     name: "Homelend",
     logo: "/brands/homelend.png",
     logoDark: "/brands/homelend-dark.png",
+    className: "",
   },
   {
     name: "ML Mortgage",
     logo: "/brands/ml-mortgage.png",
     logoDark: "/brands/ml-mortgage-dark.png",
+    className: "mt-1",
   },
   {
     name: "NG Finance",
     logo: "/brands/ng-finance.png",
     logoDark: "/brands/ng-finance-dark.png",
+    className: "mt-2",
   },
   {
     name: "Artop",
     logo: "/brands/artop.svg",
     logoDark: "/brands/artop-dark.svg",
+    className: "mt-2",
   },
 ] as const;
 
@@ -48,7 +54,7 @@ export default function Companies() {
                 key={company.name}
                 src={theme === "dark" ? company.logo : company.logoDark}
                 alt={company.name}
-                className="opacity-60 p-2 rounded-lg w-32 h-12 mix-blend-normal"
+                className={`opacity-60 p-2 rounded-lg w-32 h-12 mix-blend-normal ${company.className}`}
                 width={100}
                 height={48}
                 draggable={false}
@@ -61,7 +67,7 @@ export default function Companies() {
                 key={`${company.name}-duplicate`}
                 src={theme === "dark" ? company.logo : company.logoDark}
                 alt={company.name}
-                className="opacity-60 p-2 rounded-lg w-32 h-12 mix-blend-normal"
+                className={`opacity-60 p-2 rounded-lg w-32 h-12 mix-blend-normal ${company.className}`}
                 width={100}
                 height={48}
                 draggable={false}
